@@ -11,7 +11,7 @@ const Menu = () => {
       <Container>
         <Navbar.Brand>
           <div className="logo">
-            <i class="bi bi-fork-knife"></i>
+            <i className="bi bi-fork-knife"></i>
             <span>
               Easy<span className="accent">Cook</span>
             </span>

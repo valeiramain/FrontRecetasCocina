@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="bg-body-tertiary">
       <div className="bottom-nav py-5">
-        <div className="nav-item">
+        <div className="nav-item active">
           <i className="bi bi-house"></i>
           <span>Inicio</span>
         </div>
@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
 
         <div className="nav-item">
-         <i class="bi bi-gear"></i>
+         <i className="bi bi-gear"></i>
           <span>Admin</span>
         </div>
 
