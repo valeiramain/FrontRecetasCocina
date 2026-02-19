@@ -72,3 +72,18 @@
 .nav-item.active {
   color: rgb(236, 107, 60);
 }
+
+
+/* grilla cards inicio.jsx */
+.custom-card {
+  border-radius: 25px;          /* bordes redondeados */
+  overflow: hidden;             /* la imagen respeta los bordes */
+  background-color: #1a1a1a;   /* fondo oscuro */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* sombra sutil */
+  transition: transform 0.2s;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* efecto flotante al pasar el mouse */
+}
+
