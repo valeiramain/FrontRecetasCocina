@@ -18,7 +18,7 @@ function App() {
           <Route path='/detalleReceta/:id' element={<DetalleReceta></DetalleReceta>}/> */}
         {/* <Route path='*' element={<Error404></Error404>}></Route> */}
         </Routes>
-        <Footer></Footer>
+        {/* <Footer></Footer> */}
       </BrowserRouter>
     </main>
   );
