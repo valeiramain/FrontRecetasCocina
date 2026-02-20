@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* logo navbar */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.logo i {
+  font-size: 45px;
+  color:rgb(236, 107, 60);
+}
+
+.logo .accent {
+  color:rgb(236, 107, 60);
+}
+/* ------------------ */
+
+/* menu */
+.btn-naranja-outline {
+  background-color: #1a1a1a; /* fondo oscuro */
+  border: 2px solid rgb(236, 107, 60);
+  color: rgb(236, 107, 60);
+  transition: all 0.3s ease;
+}
+
+.btn-naranja-outline:hover {
+  background-color: rgb(236, 107, 60);
+  color: #fff;
+}
+
+
+/* footer */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 65px;
+  background-color: #1a1a1a;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #333;
+  z-index: 1000;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-item i {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.nav-item:hover {
+  color: rgb(236, 107, 60);
+}
+
+.nav-item.active {
+  color: rgb(236, 107, 60);
+}
+
+
+/* grilla cards inicio.jsx */
+.custom-card {
+  border-radius: 25px;          /* bordes redondeados */
+  overflow: hidden;             /* la imagen respeta los bordes */
+  background-color: #1a1a1a;   /* fondo oscuro */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* sombra sutil */
+  transition: transform 0.2s;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* efecto flotante al pasar el mouse */
+}
+
