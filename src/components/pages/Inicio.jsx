@@ -1,9 +1,7 @@
 import { Breadcrumb, Button } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import comida1 from "../../../src/assets/imgPlatos/pexels-alesiakozik-6065181.jpg";
 import CardRecetas from "../Recetas/CardRecetas";
+// import DetalleReceta from "./DetalleReceta";
 
 const Inicio = () => {
   return (
@@ -22,6 +20,7 @@ const Inicio = () => {
         {/* grilla de cards de recetas */}
         <Row xs={1} md={3} className="g-4">
           <CardRecetas></CardRecetas>
+          {/* <DetalleReceta></DetalleReceta> */}
         </Row>
       </section>
     </main>
