@@ -13,14 +13,17 @@ const CrearUsuario = () => {
   const [mostrarPassword, setMostrarPassword] = useState(false);
   const [mostrarPassword2, setMostrarPassword2] = useState(false);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    // chequear que no exista un usuario con el mismo email
+
     // chequear que las contraseñas sean iguales
     console.log(data);
-    if (data.passwordUsuario === data.confirmarContraseña) {
+    if (data.passwordUsuario === data.confirmaPassword) {
       data.perfilUsuario = "User";
       // armamos data sin la contraseña confirmada
       console.log(data);
-
+      const nuevoUsuario = {};
+      const respuestaUsuarioCreado = await crearUsuarioApi(data);
       Swal.fire({
         title: `Felicitaciones!`,
         text: "Usuario Creado. Puede ingresar al sistema",
@@ -141,7 +144,7 @@ const CrearUsuario = () => {
                 <Form.Control
                   type={mostrarPassword2 ? "text" : "password"}
                   placeholder="Repite tu contraseña"
-                  {...register("confirmarContraseña", {
+                  {...register("confirmaPassword", {
                     required: "Debes repetir la contraseña",
                     pattern: {
                       value:
@@ -165,10 +168,11 @@ const CrearUsuario = () => {
                 </Button>
               </div>
               <Form.Text className="text-danger">
-                {errors.confirmarContraseña?.message}
+                {errors.confirmaPassword?.message}
               </Form.Text>
             </Form.Group>
 
+            {/* Términos y condiciones */}
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check
                 type="checkbox"
