@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Swal from "sweetalert2";
+import { crearUsuarioApi } from "../../helpers/queriesUsuarios.js";
 
 const CrearUsuario = () => {
   const {
@@ -17,18 +18,35 @@ const CrearUsuario = () => {
     // chequear que no exista un usuario con el mismo email
 
     // chequear que las contraseñas sean iguales
-    console.log(data);
     if (data.passwordUsuario === data.confirmaPassword) {
       data.perfilUsuario = "User";
       // armamos data sin la contraseña confirmada
       console.log(data);
-      const nuevoUsuario = {};
-      const respuestaUsuarioCreado = await crearUsuarioApi(data);
-      Swal.fire({
-        title: `Felicitaciones!`,
-        text: "Usuario Creado. Puede ingresar al sistema",
-        icon: "success",
-      });
+      const nuevoUsuario = {
+        nombreUsuario: data.nombreUsuario,
+        emailUsuario: data.emailUsuario,
+        passwordUsuario: data.passwordUsuario,
+        perfilUsuario: data.perfilUsuario,
+        aceptaTerminos: data.aceptaTerminos
+      };
+
+      console.log(nuevoUsuario)
+      const respuestaUsuarioCreado = await crearUsuarioApi(nuevoUsuario);
+      console.log(respuestaUsuarioCreado)
+      if (respuestaUsuarioCreado && respuestaUsuarioCreado.status === 201) {
+        Swal.fire({
+          title: `Felicitaciones!`,
+          text: "Usuario Creado. Puede ingresar al sistema",
+          icon: "success",
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrio un error al Crear el Usuario!",
+          text: `El usuario ${data.nombreUsuario} no fue creado.`,
+          icon: "error",
+        });
+      }
 
       // redireccionar a ventana LOGIN
     } else {
