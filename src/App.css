@@ -108,3 +108,12 @@ main {
     border-radius: 8px;
     width: 100%;
 }
+
+/* Vista previa de la imagen de la receta */
+.imagenReceta {
+  max-height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px dashed #ccc; /* borde punteado */
+}
+
