@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
 
 main {
   /* Asegura que el contenedor ocupe al menos toda la altura de la ventana */
@@ -6,9 +6,10 @@ main {
   /* Habilita Flexbox */
   display: flex;
   /* Alinea los hijos verticalmente */
-  flex-direction: column; 
+  flex-direction: column;
   /* Esto hace que el contenido principal ocupe todo el espacio disponible */
   flex-grow: 1;
+  padding-bottom: 80px;
 }
 
 /* logo navbar */
@@ -25,11 +26,11 @@ main {
 
 .logo i {
   font-size: 45px;
-  color:rgb(236, 107, 60);
+  color: rgb(236, 107, 60);
 }
 
 .logo .accent {
-  color:rgb(236, 107, 60);
+  color: rgb(236, 107, 60);
 }
 /* ------------------ */
 
@@ -46,6 +47,44 @@ main {
   color: #fff;
 }
 
+/* componente inicio.jsx */
+.carousel-img {
+  height: clamp(200px, 35vw, 320px);
+  object-fit: cover;
+  .carousel-item {
+    position: relative;
+  }
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+/* 
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  ); */
+}
+.carousel-caption {
+  bottom: 20px;
+  text-align: left;
+}
+
+.carousel-caption h3 {
+  font-weight: 700;
+}
+
+.carousel-caption p {
+  font-size: 14px;
+}
+
+/* -------------------------- */
 
 /* footer */
 .bottom-nav {
@@ -63,6 +102,7 @@ main {
 
 .nav-item {
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   font-size: 12px;
@@ -77,20 +117,27 @@ main {
 }
 
 .nav-item:hover {
-  color: rgb(236, 107, 60);
+  color: rgb(236, 107, 60) !important;
 }
 
 .nav-item.active {
-  color: rgb(236, 107, 60);
+  color: rgb(236, 107, 60) !important;
 }
 
+.bottom-nav .nav-link {
+  color: rgb(236, 107, 60) !important;
+}
+
+.bottom-nav .nav-link i {
+  color: rgb(236, 107, 60) !important;
+}
 
 /* grilla cards inicio.jsx */
 .custom-card {
-  border-radius: 25px;          /* bordes redondeados */
-  overflow: hidden;             /* la imagen respeta los bordes */
-  background-color: #1a1a1a;   /* fondo oscuro */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* sombra sutil */
+  border-radius: 25px; /*bordes redondeados */
+  overflow: hidden; /* la imagen respeta los bordes */
+  background-color: #1a1a1a; /* fondo oscuro */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra sutil */
   transition: transform 0.2s;
 }
 
@@ -98,15 +145,13 @@ main {
   transform: translateY(-5px); /* efecto flotante al pasar el mouse */
 }
 
-
-
 /* Sombra luminosa para los recuadros */
 .shadow-light {
-    box-shadow: 0 0 10px rgba(223, 106, 10, 0.5);
-    /* box-shadow: 0 0 10px rgba(240, 235, 217, 0.5); */
+  box-shadow: 0 0 10px rgba(223, 106, 10, 0.5);
+  /* box-shadow: 0 0 10px rgba(240, 235, 217, 0.5); */
 
-    border-radius: 8px;
-    width: 100%;
+  border-radius: 8px;
+  width: 100%;
 }
 
 /* Vista previa de la imagen de la receta */
@@ -116,4 +161,3 @@ main {
   border-radius: 12px;
   border: 2px dashed #ccc; /* borde punteado */
 }
-

@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Inicio></Inicio>}/>
           <Route path='/login' element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>} />
-          <Route path='/detalleReceta' element={<DetalleReceta></DetalleReceta>}/> 
+          <Route path='/detalleReceta' element={<DetalleReceta titulo={"Crear Receta"}></DetalleReceta>}/> 
             {/* <Route path='/detalleReceta/:id' element={<DetalleReceta></DetalleReceta>}/>  */}
           <Route path='/usuarios' element={<CrearUsuario></CrearUsuario>}/>
         <Route path='*' element={<Error404></Error404>}></Route> 

@@ -1,16 +1,55 @@
 import comida1 from "../../../src/assets/imgPlatos/pexels-alesiakozik-6065181.jpg";
 import { useState } from "react";
 import { Form, Row, Col, Image, Button } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
-const DetalleReceta = () => {
+const DetalleReceta = ({ titulo }) => {
+  // vista previa de la imagen
   const [preview, setPreview] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    const imageUrl = URL.createObjectURL(file);
-    setPreview(imageUrl);
+    const imagenUrl = URL.createObjectURL(file);
+    setPreview(imagenUrl);
+
+    //validacion formulario
+     const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    setValue,
+    resetField, //limpiar input tipo file
+  } = useForm();
+
+  useEffect(() => {
+    // solo en montaje
+      cargarDatos();
+  }, []);
+
+  const cargarDatos = async () => {
+    if (titulo === "Editar Receta") {
+      const respuestaReceta = await buscarRecetaApi(id);
+      if (respuestaReceta && respuestaReceta.status === 200) {
+        const RecetaBuscado = await respuestaReceta.json();
+
+        setValue("titulo", RecetaBuscado.titulo);
+        setValue("categoria", RecetaBuscado.categoria);
+        setValue("ingredientes", RecetaBuscado.ingredientes);
+        setValue("instrucciones", RecetaBuscado.instrucciones);
+        setValue("precioReceta", RecetaBuscado.precioReceta);
+        setValue("cantPers", RecetaBuscado.cantPers);
+        setValue("tiempoPrep", RecetaBuscado.tiempoPrep);
+        setValue("autorReceta", RecetaBuscado.autorReceta);
+        // url de la imagen en cloudinary
+        setImagenActual(RecetaBuscado.imagen);
+      }
+    }
+  };
+
   };
   return (
     <main className="container my-2">
