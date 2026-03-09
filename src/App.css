@@ -161,3 +161,46 @@ main {
   border-radius: 12px;
   border: 2px dashed #ccc; /* borde punteado */
 }
+
+
+/*CardReceta.jsx */
+.custom-card-receta {
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.custom-card-receta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-color: #ffd8b3;
+}
+.img-receta-card {
+  height: 180px;
+  object-fit: cover;
+}
+
+.bg-naranja-subtle {
+  background-color: #fff1e6;
+}
+
+.text-naranja-emphasis {
+  color: #d46a00;
+}
+
+.btn-ver-receta {
+  border: 2px solid #ff7a00;
+  color: #ff7a00;
+  background: transparent;
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-ver-receta:hover {
+  background: #ff7a00;
+  color: white;
+}
+/* --------------------- */
