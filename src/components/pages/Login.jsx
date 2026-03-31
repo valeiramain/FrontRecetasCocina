@@ -14,6 +14,7 @@ const Login = ({setUsuarioLogueado}) => {
     formState: { errors },
   } = useForm();
 
+  // permite ver o no el password cuando lo ingresa
   const [mostrarPassword, setMostrarPassword] = useState(false);
 
    const navegacion = useNavigate();
@@ -125,7 +126,7 @@ const Login = ({setUsuarioLogueado}) => {
               </Form.Text>
             </Form.Group>
 
-           {/* Botón Crear */}
+           {/* Botón login */}
             <Button
               type="submit"
               className="btn-naranja-outline w-100 text-naranja-emphasis bg-naranja-subtle mt-3"

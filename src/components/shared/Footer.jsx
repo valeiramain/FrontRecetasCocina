@@ -1,33 +1,51 @@
-const Footer = () => {
+
+import { Navbar, Nav } from "react-bootstrap";
+import { Link, NavLink, useNavigate } from "react-router";
+
+const Footer = ({ usuarioLogueado, setUsuarioLogueado }) => {
+  const navegacion = useNavigate();
+  const logout = () => {
+    setUsuarioLogueado({});
+    navegacion("/");
+  };
+
   return (
-    <footer className="bg-body-tertiary">
-      <div className="bottom-nav py-5">
-        <div className="nav-item active">
+    <Navbar fixed="bottom" bg="black" variant="dark" className="bottom-navbar">
+      <Nav className="w-100 d-flex justify-content-around text-center">
+
+        <Nav.Link to="/" className="nav-item">
           <i className="bi bi-house"></i>
-          <span>Inicio</span>
-        </div>
+          <div>Inicio</div>
+        </Nav.Link>
 
-        <div className="nav-item">
+        <Nav.Link as={Link} to="/buscar" className="nav-item">
           <i className="bi bi-search"></i>
-          <span>Buscar</span>
-        </div>
+          <div>Buscar</div>
+        </Nav.Link>
 
-        <div className="nav-item">
+        <Nav.Link as={Link} to="/recetas" className="nav-item">
           <i className="bi bi-book"></i>
-          <span>Recetas</span>
-        </div>
+          <div>Recetas</div>
+        </Nav.Link>
 
-        <div className="nav-item">
-         <i className="bi bi-gear"></i>
-          <span>Admin</span>
-        </div>
-
-        <div className="nav-item">
+        {usuarioLogueado.nombre ? (
+          <>
+            <Nav.Link to="/administrador" className="nav-item">
+              <i className="bi bi-gear"></i>
+              <div>Admin</div>
+            </Nav.Link>
+           <Nav.Link as={Link} to="/login" className="nav-item">
+          <i className="bi bi-door-open"></i>
+          <div>Logout</div>
+        </Nav.Link>
+          </>
+        ) : (
+        <Nav.Link as={Link} to="/login" className="nav-item">
           <i className="bi bi-person"></i>
-          <span>Login</span>
-        </div>
-      </div>
-    </footer>
+          <div>Login</div>
+        </Nav.Link>)}
+      </Nav>
+    </Navbar>
   );
 };
 

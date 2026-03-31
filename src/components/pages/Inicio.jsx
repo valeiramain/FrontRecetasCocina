@@ -51,9 +51,6 @@ const Inicio = () => {
         {/* grilla de cards de recetas */}
         <Row xs={1} md={3} className="g-4">
           <CardRecetas></CardRecetas>
-          <CardRecetas></CardRecetas>
-          <CardRecetas></CardRecetas>
-          <CardRecetas></CardRecetas>
           {/* <DetalleReceta></DetalleReceta> */}
         </Row>
       </section>

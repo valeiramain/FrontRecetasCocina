@@ -48,7 +48,7 @@ const CardRecetas = () => {
             Autor receta
           </div>
         </Card.Body>
-        <Card.Footer className="bg-dark text-center border-0">
+        <Card.Footer className="text-center border-0 " >
           <Button className="btn-ver-receta">
             Ver receta completa
           </Button>

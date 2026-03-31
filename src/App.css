@@ -12,6 +12,9 @@ main {
   padding-bottom: 80px;
 }
 
+body {
+  padding-bottom: 70px;
+}
 /* logo navbar */
 
 .logo {
@@ -86,86 +89,13 @@ main {
 
 /* -------------------------- */
 
-/* footer */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 65px;
-  background-color: #1a1a1a;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid #333;
-  z-index: 1000;
-}
-
-.nav-item {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  font-size: 12px;
-  color: #aaa;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.nav-item i {
-  font-size: 20px;
-  margin-bottom: 3px;
-}
-
-.nav-item:hover {
-  color: rgb(236, 107, 60) !important;
-}
-
-.nav-item.active {
-  color: rgb(236, 107, 60) !important;
-}
-
-.bottom-nav .nav-link {
-  color: rgb(236, 107, 60) !important;
-}
-
-.bottom-nav .nav-link i {
-  color: rgb(236, 107, 60) !important;
-}
-
 /* grilla cards inicio.jsx */
-.custom-card {
-  border-radius: 25px; /*bordes redondeados */
-  overflow: hidden; /* la imagen respeta los bordes */
-  background-color: #1a1a1a; /* fondo oscuro */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra sutil */
-  transition: transform 0.2s;
-}
-
-.custom-card:hover {
-  transform: translateY(-5px); /* efecto flotante al pasar el mouse */
-}
-
-/* Sombra luminosa para los recuadros */
-.shadow-light {
-  box-shadow: 0 0 10px rgba(223, 106, 10, 0.5);
-  /* box-shadow: 0 0 10px rgba(240, 235, 217, 0.5); */
-
-  border-radius: 8px;
-  width: 100%;
-}
-
-/* Vista previa de la imagen de la receta */
-.imagenReceta {
-  max-height: 120px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 2px dashed #ccc; /* borde punteado */
-}
 
 
 /*CardReceta.jsx */
 .custom-card-receta {
   border: 1px solid #e9ecef;
+  background-color: #1a1a1a;
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.25s ease;
@@ -204,3 +134,30 @@ main {
   color: white;
 }
 /* --------------------- */
+
+/* ****** footer ****** */
+.bottom-navbar {
+  height: 65px;
+  border-top: 1px solid #ddd;
+}
+
+.bottom-navbar .nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #d4cccc;
+}
+
+.bottom-navbar i {
+  font-size: 20px;
+}
+
+.bottom-navbar .nav-item.active,
+.bottom-navbar .nav-item:hover {
+  color: rgb(236, 107, 60); 
+}
+
+.nav-link.active {
+  color: rgb(236, 107, 60);
+}
